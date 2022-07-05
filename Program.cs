@@ -9,7 +9,7 @@ while (!addresses.EndOfStream)
     try
     {
         string row = addresses.ReadLine();
-        Console.WriteLine(row);
+        //Console.WriteLine(row);
         string[] data = row.Split(",");
 
         string name = data[0];
@@ -25,6 +25,18 @@ while (!addresses.EndOfStream)
     catch(IndexOutOfRangeException)
     {
         Console.WriteLine("File corrotto");
+    }
+}
+
+addresses.Close();
+
+
+void Print(List<Address> list)
+{
+    Console.WriteLine($"<---/tName /tSurname /tStreet /tCity /tProvince /tzip/t--->");
+    foreach(Address address in list)
+    {
+        Console.WriteLine($"/t{address.Name} /t{address.Surname} /t{address.Street} /t{address.City} /t{address.Province} /t{address.Zip}/t");
     }
 }
 
@@ -46,6 +58,4 @@ public class Address
         Province = province;
         Zip = zip;
     }
-
-
 }
