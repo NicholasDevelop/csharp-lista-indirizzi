@@ -30,13 +30,15 @@ while (!addresses.EndOfStream)
 
 addresses.Close();
 
+Print(list);
+
 
 void Print(List<Address> list)
 {
-    Console.WriteLine($"<---/tName /tSurname /tStreet /tCity /tProvince /tzip/t--->");
+    Console.WriteLine($"<---\tName\tSurname\tStreet\tCity\tProvince\tzip\t--->");
     foreach(Address address in list)
     {
-        Console.WriteLine($"/t{address.Name} /t{address.Surname} /t{address.Street} /t{address.City} /t{address.Province} /t{address.Zip}/t");
+        Console.WriteLine($"\t{address.Name}\t{address.Surname}\t{address.Street}\t{address.City}\t{address.Province}\t{address.Zip}\t");
     }
 }
 
